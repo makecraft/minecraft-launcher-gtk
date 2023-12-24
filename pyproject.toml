@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "minecraft-launcher-gtk"
+version = "0.0.0"
+description = "A Minecraft Launcher using Gnome modern tecnologies"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pygobject = "^3.46.0"
+pygobject-stubs = "^2.10.0"
+minecraft-launcher-lib = "^6.4"
+aria2p = "^0.11.3"
+aiohttp = "^3.9.1"
+
+[[tool.poetry.source]]
+name = "UCLV"
+url = "https://nexus.uclv.edu.cu/repository/pypi/simple/"
+priority = "primary"
+
+
+[[tool.poetry.source]]
+name = "PyPI"
+priority = "supplemental"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
