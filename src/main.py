@@ -8,7 +8,8 @@ gi.require_version("Adw", "1")
 
 from gi.repository import Adw, Gio
 
-from . import views
+
+import views
 
 
 class MainWindow(Adw.Window):
@@ -26,6 +27,7 @@ class App(Adw.Application):
 
         # region actions
         self.create_action("preferences", self.on_preferences)
+        self.create_action("about", self.on_about_action)
         # endregion actions
 
         self.connect("activate", self.on_activate)
@@ -42,9 +44,14 @@ class App(Adw.Application):
     def on_preferences(self, *args):
         self.window.set_content(views.PreferencesView())
 
+    def on_about_action(self, *args):
+        views.AboutWindow(self.window)
+
+
+def main():
+    app = App(application_id="com.github.makecraft.minecraft-launcher-gtk")
+    app.run(sys.argv)
+
 
 if __name__ == "__main__":
-    pass
-
-app = App(application_id="com.github.makecraft.minecraft-launcher-gtk")
-app.run(sys.argv)
+    main()

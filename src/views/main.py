@@ -4,7 +4,6 @@ gi.require_version("Gtk", "4.0")
 gi.require_version("Adw", "1")
 
 from gi.repository import Adw, Gtk, Gio
-from .. import settings
 
 
 class MainView(Adw.NavigationPage):
@@ -40,9 +39,7 @@ class MainView(Adw.NavigationPage):
 
         toolbar_view.set_content(header_bar)
 
-        # self.set_child(toolbar_view)
-
-        gio_file = Gio.File.new_for_path(settings.banner_path)
+        gio_file = Gio.File.new_for_path("assets/banner/Trails & Tales banner.jpg")
 
         picture = Gtk.Picture.new_for_file(file=gio_file)
         picture.set_content_fit(content_fit=Gtk.ContentFit.FILL)
