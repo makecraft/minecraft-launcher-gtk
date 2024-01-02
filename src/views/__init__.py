@@ -1,2 +1,5 @@
 from .about import AboutWindow
-from .main import MainView
+from .avatar import AvatarView
+from .home import HomeView
+from .instances import InstancesView
+from .preferences import PreferencesView
